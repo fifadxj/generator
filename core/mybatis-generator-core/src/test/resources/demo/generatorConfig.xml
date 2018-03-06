@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<properties resource="demo/conf.properties" />
+	<!-- DB驱动所在路径 -->
+	<classPathEntry location="D:/temp/mysql-connector-java-5.1.26-bin.jar" />
+	
+	<context id="Dev-Tables" targetRuntime="MyBatis3" defaultModelType="flat">
+		<property name="javaFileEncoding" value="UTF-8" />
+
+		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+			<property name="fileName" value="sqlmap-config.xml" />
+			<property name="targetPackage" value="mybatis" />
+			<property name="targetProject" value="${generator.path}"/>
+		</plugin>
+		
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="DOExample$" />
+			<property name="replaceString" value="Criteria" />
+		</plugin>
+
+<!--******************* 需要手动修改  *******************-->
+		<!-- 自定义Plugin -->
+		<!--<plugin type="org.mybatis.generator.plugin.MyPlugin"/>-->
+		
+		<commentGenerator>
+			<property name="suppressDate" value="false"/>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+
+
+<!--******************* 需要手动修改  *******************-->
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="${jdbc.driver}" userId="${jdbc.username}" password="${jdbc.password}"
+						connectionURL="${jdbc.url}"/>
+
+
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，
+		             为 true，把JDBC DECIMAL 和  NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="true"/>
+		</javaTypeResolver>
+
+<!--******************* 需要手动修改  *******************-->		
+		<!-- javaModelGenerator:生成PO类 -->
+		<!-- 下面的targetProject(生成元素所在的目录，也可以是绝对路径)必须事先存在 -->
+		<javaModelGenerator targetProject="${generator.path}" targetPackage="${model.package}">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="true"/>
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true"/>
+			<!-- 生成的DO均继承此类 -->
+			<property name="rootClass" value="${modle.parent.class}" />
+		</javaModelGenerator>
+
+        <!-- sqlMapGenerator:生成mapper映射文件 -->
+		<sqlMapGenerator targetProject="${generator.path}" targetPackage="mybatis.sqlmap">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false"/>
+		</sqlMapGenerator>
+
+<!--******************* 需要手动修改  *******************-->	
+		<!-- javaClientGenerator：生成mapper接口 -->
+		<javaClientGenerator type="XMLMAPPER" targetProject="${generator.path}" targetPackage="${mapper.package}">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false"/>
+		</javaClientGenerator>
+
+
+		<!--******************* trade  *******************-->
+	    <!-- 指定数据库表 -->
+		<!-- 若jdbcConnection的connectionURL中已制定schema，则这里的schema可以忽略 -->
+		<table schema="${schema}" tableName="cps_ln" domainObjectName="CpsLn"
+		    enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<!-- 有些表的字段需要指定java类型 -->
+			<!-- <columnOverride column="" javaType="" /> -->
+		</table>
+
+	</context>
+</generatorConfiguration>
