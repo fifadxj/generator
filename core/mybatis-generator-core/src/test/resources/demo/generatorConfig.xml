@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-	<properties resource="demo/conf.properties" />
+	<properties resource="demo/trans.properties" />
 	<!-- DB驱动所在路径 -->
 	<classPathEntry location="D:/temp/mysql-connector-java-5.1.26-bin.jar" />
 	
@@ -73,12 +73,90 @@
 		<!--******************* trade  *******************-->
 	    <!-- 指定数据库表 -->
 		<!-- 若jdbcConnection的connectionURL中已制定schema，则这里的schema可以忽略 -->
-		<table schema="${schema}" tableName="cps_ln" domainObjectName="CpsLn"
+		<table schema="${schema}" tableName="cps_ln" domainObjectName="Ln"
 		    enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
 			enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
 			<!-- 有些表的字段需要指定java类型 -->
 			<!-- <columnOverride column="" javaType="" /> -->
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_ln_trans" domainObjectName="LnTrans"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_rptm" domainObjectName="Rptm"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_rptm_trans" domainObjectName="RptmTrans"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_rptm_sub_trans" domainObjectName="RptmSubTrans"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_rptm_sched" domainObjectName="RptmSched"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_rptm_sched_hst" domainObjectName="RptmSchedHst"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_payment" domainObjectName="Payment"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_quota" domainObjectName="Quota"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_write_off_plan" domainObjectName="writeOffPlan"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_daily_interest" domainObjectName="DailyInterest"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_daily_penalty" domainObjectName="DailyPenalty"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
 		</table>
 
 	</context>
