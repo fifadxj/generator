@@ -62,6 +62,8 @@ public class SelectByConditionElementGenerator extends
         context.getCommentGenerator().addComment(answer);
 
         StringBuilder sb = new StringBuilder();
+        sb.append("select ");
+        answer.addElement(new TextElement(sb.toString()));
 
         answer.addElement(getBaseColumnListElement());
         if (introspectedTable.hasBLOBColumns()) {

@@ -43,9 +43,11 @@ public class SelectByConditionMethodGenerator extends
         FullyQualifiedJavaType returnType = introspectedTable.getRules()
                 .calculateAllFieldsClass();
         FullyQualifiedJavaType returnTypeList = new FullyQualifiedJavaType("java.util.List");
+        //FullyQualifiedJavaType returnTypeList = new FullyQualifiedJavaType("com.github.pagehelper.Page");
         method.setReturnType(returnTypeList);
         importedTypes.add(returnType);
         importedTypes.add(FullyQualifiedJavaType.getNewListInstance());
+        //importedTypes.add(new FullyQualifiedJavaType("com.github.pagehelper.Page"));
 
         method.setName("selectByCondition");
 
