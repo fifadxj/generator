@@ -117,7 +117,14 @@
 			<generatedKey column="id" sqlStatement="JDBC" />
 		</table>
 
-		<table schema="${schema}" tableName="cps_rptm_sched_hst" domainObjectName="RptmSchedHst"
+		<table schema="${schema}" tableName="cps_rptm_sched_snapshot" domainObjectName="RptmSchedSnapshot"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_rptm_sched_change_history" domainObjectName="RptmSchedChangeHistory"
 			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
 			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
 			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
@@ -138,7 +145,7 @@
 			<generatedKey column="id" sqlStatement="JDBC" />
 		</table>
 
-		<table schema="${schema}" tableName="cps_write_off_plan" domainObjectName="writeOffPlan"
+		<table schema="${schema}" tableName="cps_write_off_plan" domainObjectName="WriteOffPlan"
 			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
 			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
 			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
