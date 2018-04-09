@@ -23,12 +23,12 @@
 <!--******************* 需要手动修改  *******************-->
 		<!-- 自定义Plugin -->
 		<!--<plugin type="org.mybatis.generator.plugin.MyPlugin"/>-->
-		
-		<commentGenerator>
-			<property name="suppressDate" value="false"/>
-			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-			<property name="suppressAllComments" value="true"/>
-		</commentGenerator>
+
+        <commentGenerator type="org.mybatis.generator.plugins.MyCommentGenerator">
+            <property name="suppressDate" value="false"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <!-- <property name="suppressAllComments" value="true"/> -->
+        </commentGenerator>
 
 
 <!--******************* 需要手动修改  *******************-->
