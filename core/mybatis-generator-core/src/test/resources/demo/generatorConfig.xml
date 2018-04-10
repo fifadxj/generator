@@ -131,14 +131,14 @@
 			<generatedKey column="id" sqlStatement="JDBC" />
 		</table>
 
-		<table schema="${schema}" tableName="cps_payment" domainObjectName="Payment"
+		<table schema="${schema}" tableName="cps_payment_remote" domainObjectName="Payment"
 			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
 			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
 			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
 			<generatedKey column="id" sqlStatement="JDBC" />
 		</table>
 
-		<table schema="${schema}" tableName="cps_quota" domainObjectName="Quota"
+		<table schema="${schema}" tableName="cps_quota_remote" domainObjectName="Quota"
 			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
 			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
 			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
