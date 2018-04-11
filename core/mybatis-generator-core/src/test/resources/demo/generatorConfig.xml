@@ -80,6 +80,7 @@
 			<!-- 有些表的字段需要指定java类型 -->
 			<!-- <columnOverride column="" javaType="" /> -->
 			<generatedKey column="id" sqlStatement="JDBC" />
+			<columnOverride column="REPAYING" property="repaying" jdbcType="CHAR" javaType="java.lang.Boolean" typeHandler="org.apache.ibatis.type.BooleanTypeHandler"/>
 		</table>
 
 		<table schema="${schema}" tableName="cps_ln_trans" domainObjectName="LnTrans"
