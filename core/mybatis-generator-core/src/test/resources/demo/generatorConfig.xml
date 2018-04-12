@@ -14,7 +14,7 @@
 			<property name="targetPackage" value="mybatis" />
 			<property name="targetProject" value="${generator.path}"/>
 		</plugin>
-		
+
 		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
 			<property name="searchString" value="DOExample$" />
 			<property name="replaceString" value="Criteria" />
@@ -44,7 +44,7 @@
 			<property name="forceBigDecimals" value="true"/>
 		</javaTypeResolver>
 
-<!--******************* 需要手动修改  *******************-->		
+<!--******************* 需要手动修改  *******************-->
 		<!-- javaModelGenerator:生成PO类 -->
 		<!-- 下面的targetProject(生成元素所在的目录，也可以是绝对路径)必须事先存在 -->
 		<javaModelGenerator targetProject="${generator.path}" targetPackage="${model.package}">
@@ -62,7 +62,7 @@
 			<property name="enableSubPackages" value="false"/>
 		</sqlMapGenerator>
 
-<!--******************* 需要手动修改  *******************-->	
+<!--******************* 需要手动修改  *******************-->
 		<!-- javaClientGenerator：生成mapper接口 -->
 		<javaClientGenerator type="XMLMAPPER" targetProject="${generator.path}" targetPackage="${mapper.package}">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
@@ -161,6 +161,20 @@
 		</table>
 
 		<table schema="${schema}" tableName="cps_daily_penalty" domainObjectName="DailyPenalty"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_ln_stat" domainObjectName="LnStat"
+			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
+			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="${schema}" tableName="cps_ln_stat_snapshot" domainObjectName="LnStatSnapshot"
 			   enableInsert="true"	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
 			   enableSelectByExample="false" selectByExampleQueryId="false" enableDeleteByPrimaryKey="false"
 			   enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">
